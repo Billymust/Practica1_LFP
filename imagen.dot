@@ -1,0 +1,10 @@
+digraph{  
+rankdir=LR 
+node[shape=circle, fontname="Arial Black", fontsize=16] 
+The Avengers -> Robert Downey Jr,Chris Evans,Chris Hemsworth 
+Spiderman->Tobey Maguire,Kirsten Dunst,Willem Dafoe
+The Amazing Spiderman->Andrew Garfield,Emma Stone
+The Amazing Spiderman 2-> Andrew Garfield,Emma Stone
+Spiderman Homecoming->Tom Holland, Zendaya
+Avengers Infinity War->Robert Downey Jr,Tom Holland
+ } 
