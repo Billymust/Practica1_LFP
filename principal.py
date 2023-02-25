@@ -1,7 +1,8 @@
-from cargaTexto import cargarTexto, grafica
+from cargaTexto import cargarTexto, grafica, filtradoPorActor
 from cargaTexto import ruta
 movieList=[]
 listaPelis=[]
+ruta=""
 
 print("Lenguajes formales y de programacion")
 print("Seccion B-")
@@ -27,7 +28,7 @@ while opcion!=5:
     if opcion==1:
         #cargar archivos
         print("cargar archivo")
-        cargarTexto(movieList)
+        ruta=cargarTexto(movieList)
         print("CARGO EXITOSAMENTE\n")
         pass
     elif opcion==2:
@@ -74,9 +75,14 @@ while opcion!=5:
             print("4)Regresar")
             print("---------------")
             print("ingrese una opcion para continuar")
-            opFiltro=int(input)
+            opFiltro=int(input())
             if opFiltro==1:
-                
+                print("ingrese un nombre para buscar")
+                nombre=str(input())
+                filtradoPorActor(movieList, nombre,ruta)
+                for i in movieList:
+                    i.showPeliculasActor()
+
                 pass
             if opFiltro==2:
                 pass

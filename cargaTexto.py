@@ -13,6 +13,8 @@ class movie:
     
     def showActoresPeli(self):
         print("AUTORES: ", self.actor)
+    def showPeliculasActor(self):
+        print("NOMBRE PELICULA: ",self.name)
 
 
 
@@ -40,23 +42,27 @@ def grafica(list):
     textoDOT.write(" } \n" )
     textoDOT.close
 
-def filtradoPorActor(list,nombre):
-    ruta=input("Ingrese la ruta del .lfp a leer: ")
+def filtradoPorActor(list,nombre,ruta):
+    #ruta=input("Ingrese la ruta del .lfp a leer: ")
+    print(ruta)
     textoLfp=open(ruta, "r")
     lines= textoLfp.readlines()
-    temp_name=None
+    
+    temp_actor=None
     pelisEncontradas=0
     for i in lines:
-        if nombre==temp_name:
+        if nombre==temp_actor:
             pelisEncontradas+=1
     if pelisEncontradas==0:
         None
     peliPorActor=[pelisEncontradas]
     pelisEncontradas=0
     for i in lines:
-        if nombre==temp_name:
+        if nombre==temp_actor:
             peliPorActor[pelisEncontradas]
             pelisEncontradas+=1
+
+    list.append(peliPorActor)        
         
     
 
@@ -89,6 +95,7 @@ def cargarTexto(list):
         
         cine=movie(tempo_name, tempo_actor, tempo_year, tempo_genre)
         list.append(cine)
+    return ruta
 
 
 

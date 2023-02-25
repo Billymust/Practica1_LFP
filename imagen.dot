@@ -1,6 +1,6 @@
 digraph{  
 rankdir=LR 
-node[shape=circle, fontname="Arial Black", fontsize=16] 
+node[shape=record, fontname="Arial Black", fontsize=16] 
 The Avengers -> Robert Downey Jr,Chris Evans,Chris Hemsworth 
 Spiderman->Tobey Maguire,Kirsten Dunst,Willem Dafoe
 The Amazing Spiderman->Andrew Garfield,Emma Stone
