@@ -1,3 +1,4 @@
+import os 
 class movie:
     def __init__(self,name, actor, year, genre):
         self.name=name
@@ -22,6 +23,7 @@ class movie:
 
 ruta=None
 def grafica(list):
+    baseDeDatos=[]
     ruta=input("Ingrese la ruta del .lfp a leer: ")
     textoLfp=open(ruta, "r")
     lines= textoLfp.readlines()
@@ -29,18 +31,20 @@ def grafica(list):
         i=i.replace('\n', '')
         i=i.split(";")
         x={"Pelicula": i[0], "Autores": i[1], "Año": i[2], "Genero": i[3]}
-        list.append(x)
-
+        baseDeDatos.append(x)
+    print("holaaaaa")
+    print(lines)
     print(list)
-    textoLfp.close
+    textoLfp.close()
     textoDOT=open("imagen.dot","w")
     textoDOT.write("digraph{  \n")
     textoDOT.write('rankdir=LR \n')
     textoDOT.write('node[shape=record, fontname="Arial Black", fontsize=16] \n')
-    for i in list:
+    for i in baseDeDatos:
         textoDOT.write(i["Pelicula"]+'->'+i["Autores"]+"\n")
     textoDOT.write(" } \n" )
-    textoDOT.close
+    textoDOT.close()
+    os.system("dot.exe -Tpng imagen.dot -o  reporteGrafico.png")
 
 def filtradoPorActor(list,nombre,ruta):
     #ruta=input("Ingrese la ruta del .lfp a leer: ")
