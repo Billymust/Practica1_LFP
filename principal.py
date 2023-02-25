@@ -80,10 +80,10 @@ while opcion!=5:
                 print("ingrese un nombre para buscar")
                 nombre=str(input())
                 filtradoPorActor(movieList, nombre,ruta)
-                for i in movieList:
-                    i.showPeliculasActor()
+                #for i in movieList:
+                 #   i.showPeliculasActor()
 
-                pass
+                #pass
             if opFiltro==2:
                 pass
             if opFiltro==3:

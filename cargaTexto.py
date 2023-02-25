@@ -14,8 +14,11 @@ class movie:
     
     def showActoresPeli(self):
         print("AUTORES: ", self.actor)
+    
     def showPeliculasActor(self):
         print("NOMBRE PELICULA: ",self.name)
+    def mostrarPeliActor(self):
+        return self.actor
 
 
 
@@ -48,7 +51,11 @@ def grafica(list):
 
 def filtradoPorActor(list,nombre,ruta):
     #ruta=input("Ingrese la ruta del .lfp a leer: ")
-    print(ruta)
+    
+    for i in list:
+        guardado=i.mostrarPeliActor()
+        
+    print(guardado)
     textoLfp=open(ruta, "r")
     lines= textoLfp.readlines()
     
