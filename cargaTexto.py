@@ -42,8 +42,10 @@ def grafica(list):
     textoDOT=open("imagen.dot","w")
     textoDOT.write("digraph{  \n")
     textoDOT.write('rankdir=LR \n')
-    textoDOT.write('node[shape=record, fontname="Arial Black", fontsize=16] \n')
+    textoDOT.write('node[shape=record, fontname="Arial Black", fontsize=16, color="blue", style="filled"] \n')
+
     for i in baseDeDatos:
+        i["Pelicula"]=i["Pelicula"].replace(' ', '')
         textoDOT.write(i["Pelicula"]+'->'+i["Autores"]+"\n")
     textoDOT.write(" } \n" )
     textoDOT.close()
